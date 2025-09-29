@@ -16,3 +16,13 @@ Before using poetry, ensure you have activated the intended python version eithe
 
 We are going to simulate a small voting system in which users can vote to their candidates after authentication.
 This session is only about authentication.
+## How to run the app
+
+### Build the image with Compose
+Run `docker compose build` to build the container image defined in the repo.
+
+### Start the app with Compose
+Run `docker compose up -d` to launch the FastAPI service in the background.
+
+### Stop the app with Compose
+Run `docker compose down` to stop and remove the running containers.

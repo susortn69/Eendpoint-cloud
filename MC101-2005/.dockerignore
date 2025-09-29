@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.git/
+.gitignore
+logs/logs.log
+__xmind/
+D2 - Endpoint Security.png
+D2 - Endpoint Security.xmind
