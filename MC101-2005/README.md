@@ -3,9 +3,9 @@
 This repository hosts multiple assignments for the \"Endpoint og sky\" course. Each task lives in its own folder so the original deliverables stay intact.
 
 ## Repository layout
-- Task1/ – FastAPI authentication service (registration, login, info, delete) with 1-minute JWT expiry.
-- Task2/ – Builds on Task 1 by adding logging, Docker/Compose setup, and README run instructions.
-- Task3/ – Persists data in Postgres, adds admin candidate management, and user voting endpoints.
+- Task1/ : FastAPI authentication service (registration, login, info, delete) with 1-minute JWT expiry.
+- Task2/ : Builds on Task 1 by adding logging, Docker/Compose setup, and README run instructions.
+- Task3/ : Persists data in Postgres, adds admin candidate management, and user voting endpoints.
 
 ## Working with a task
 1. cd TaskX
