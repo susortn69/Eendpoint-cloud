@@ -4,3 +4,4 @@ __pycache__/
 venv/
 **/.env
 Task2/logs/
+Task3/logs/
