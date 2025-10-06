@@ -1,2 +1,6 @@
 __pycache__/
-.env
+**/__pycache__/
+*.py[cod]
+venv/
+**/.env
+Task2/logs/

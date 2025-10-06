@@ -1,28 +1,14 @@
-# Pre-requisites
-## Conda
-Venv => You can not choose the python version.
-We use poetry for package management. Poetry builds up its package upon a virtual environment. We can use either of Venv or Conda. Conda give us the ability to choose the python version regardless of our default python. 
-## Poetry
-Before using poetry, ensure you have activated the intended python version either by using that or by using conda.
-### Poetry commands
-`poetry init`: Inits a poetry for the project
-`poetry install`: Installs the poetry based on the initialized setup with `poetry init` command and updates the `poetry.lock` file.
-`poetry update`: Updates the env if any package is added but not installed as well as updating the new compatible versions. 
-`poetry add PACKAGE_NAME`: Adds a package
-`poetry remove PACKAGE_NAME`: Removes a package
-`poetry export -f requirements.txt --output requirements.txt --without-hashes`: Exports all packages with their versions into the requirements.txt file.
+# Mandatory Tasks
 
-# Project: A Voting system
+This repository hosts multiple assignments for the "Endpoint og sky" course. Each task lives in its own folder so the original deliverables stay intact.
 
-We are going to simulate a small voting system in which users can vote to their candidates after authentication.
-This session is only about authentication.
-## How to run the app
+## Repository layout
+- `Task1/` – FastAPI authentication service (registration, login, info, delete) with 1-minute JWT expiry.
+- `Task2/` – Builds on Task 1 by adding logging, Docker/Compose setup, and README run instructions.
 
-### Build the image with Compose
-Run `docker compose build` to build the container image defined in the repo.
+## Working with a task
+1. `cd TaskX`
+2. Follow the task-specific README for setup and commands.
+3. Keep `.env` files out of version control; copy from `example.env.txt`.
 
-### Start the app with Compose
-Run `docker compose up -d` to launch the FastAPI service in the background.
-
-### Stop the app with Compose
-Run `docker compose down` to stop and remove the running containers.
+Feel free to extend with additional tasks using the same structure.
