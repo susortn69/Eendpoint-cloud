@@ -5,3 +5,4 @@ venv/
 **/.env
 Task2/logs/
 Task3/logs/
+Task4/*.json

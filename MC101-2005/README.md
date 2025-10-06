@@ -6,6 +6,7 @@ This repository hosts multiple assignments for the \"Endpoint og sky\" course. E
 - Task1/ : FastAPI authentication service (registration, login, info, delete) with 1-minute JWT expiry.
 - Task2/ : Builds on Task 1 by adding logging, Docker/Compose setup, and README run instructions.
 - Task3/ : Persists data in Postgres, adds admin candidate management, and user voting endpoints.
+- Task4/ : Postman test suite instructions and exported artifacts for Task 3.
 
 ## Working with a task
 1. cd TaskX
