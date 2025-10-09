@@ -14,22 +14,18 @@ from utils.constants import ResponseMessages
 from utils.database import get_db
 
 settings = Settings()
-
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="users/login")
-
-
-def hash_context() -> CryptContext:
-    return CryptContext(schemes=["bcrypt", "pbkdf2_sha256", "argon2"], deprecated="auto")
+PWD_CONTEXT = CryptContext(schemes=["bcrypt", "pbkdf2_sha256", "argon2"], deprecated="auto")
 
 
 def hash_password(password: SecretStr | str) -> str:
     value = password.get_secret_value() if isinstance(password, SecretStr) else str(password)
-    return hash_context().hash(value)
+    return PWD_CONTEXT.hash(value)
 
 
 def verify_password(plain_password: SecretStr | str, hashed_password: str) -> bool:
     value = plain_password.get_secret_value() if isinstance(plain_password, SecretStr) else str(plain_password)
-    return hash_context().verify(value, hashed_password)
+    return PWD_CONTEXT.verify(value, hashed_password)
 
 
 def create_access_token(data: dict) -> str:

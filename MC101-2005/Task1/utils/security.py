@@ -9,23 +9,18 @@ from fastapi.security.oauth2 import OAuth2PasswordBearer
 from utils.constants import ResponseMessages
 
 settings = Settings()
+PWD_CONTEXT = CryptContext(schemes=["bcrypt", "pbkdf2_sha256", "argon2"], deprecated="auto")
 
-def hash_context() -> CryptContext:
-    # deprecated="auto" will mark old algorithms as deprecated when a new one is added
-    # .needs_update() can be used to check if a hash needs to be updated
-    return CryptContext(schemes=["bcrypt", "pbkdf2_sha256", "argon2"], deprecated="auto")
 
 def hash_password(password: SecretStr) -> str:
-    pwd_context = hash_context()
-    return pwd_context.hash(password.get_secret_value())
+    return PWD_CONTEXT.hash(password.get_secret_value())
 
 
 def verify_password(plain_password: SecretStr, hashed_password: str) -> bool:
     """
     Verify a plain password against a hashed password.
     """
-    pwd_context = hash_context()
-    return pwd_context.verify(plain_password.get_secret_value(), hashed_password)
+    return PWD_CONTEXT.verify(plain_password.get_secret_value(), hashed_password)
 
 
 def create_access_token(data: dict) -> str: 
@@ -51,15 +46,12 @@ def decode_access_token(token: str = Depends(oauth2_scheme)) -> dict:
     Decode a JWT token and return the payload.
     """
     try:
-        # This code will try to decode the JWT token and if it fails, it will raise an exception
-        # As the result of this exception rais, try will fail. When any code inside the try block
-        # fails, automatically code jumps to the except block and do not execute the rest of the try block
+        
         payload = jwt.decode(token, settings.JWT_SECRET_KEY.get_secret_value(), algorithms=[settings.JWT_ALGORITHM])
         
-        # Check if payload has required fields
         email = payload.get("email")
         if not email:
-            # If no email, if will raise
+            
             raise JWTError(status_code=401, detail=ResponseMessages.INVALID_TOKEN_MISSING_EMAIL)
         
         user = get_user_by_email(email)

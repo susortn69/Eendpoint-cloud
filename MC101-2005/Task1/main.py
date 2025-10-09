@@ -27,4 +27,4 @@ def read_health():
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:voting_app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:voting_app", host="0.0.0.0", port=9000, reload=True)

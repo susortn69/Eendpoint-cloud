@@ -2,9 +2,9 @@ services:
   app:
     build: .
     container_name: voting_app
-    command: uvicorn main:voting_app --host 0.0.0.0 --port 8000
+    command: uvicorn main:voting_app --host 0.0.0.0 --port 9000
     ports:
-      - "8000:8000"
+      - "9000:9000"
     env_file:
       - ./.env
     volumes:

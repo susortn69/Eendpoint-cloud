@@ -15,7 +15,6 @@ class ResponseMessages:
     USER_DELETED = "User deleted successfully."
     USER_ALREADY_EXISTS = "User with this email already exists."
     USER_NOT_FOUND = "User with this email does not exist."
-    USER_INACTIVE = "User is inactive and cannot vote."
     INVALID_PASSWORD = "The password provided is incorrect."
     INVALID_TOKEN_MISSING_EMAIL = "Invalid token: missing email"
     INVALID_TOKEN_MISSING_USER = "Invalid token: missing user"
